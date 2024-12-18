@@ -1,0 +1,22 @@
+.region-top-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 15px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #f4f4f4;
+    }
+}

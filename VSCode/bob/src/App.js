@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
+import MainPage from "./pages/Main/MainPage";
 
 function App() {
   return (
@@ -7,9 +8,9 @@ function App() {
       {/* 공통 헤더 컴포넌트 */}
       <Header />
 
-      {/* 나머지 페이지 내용 */}
+      {/* 메인인 페이지 내용 */}
       <main>
-        <h1>페이지 내용 여기에 추가!</h1>
+        <MainPage />
       </main>
     </div>
   );
