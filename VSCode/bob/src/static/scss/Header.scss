@@ -1,0 +1,52 @@
+@import 'variables';
+@import 'mixins';
+
+.header-container {
+    @include flex-center(space-around, center); // 중앙 정렬
+    padding: $header-padding;
+    background-color: white;
+    border-bottom: 2px solid $primary-color;
+
+    // 로고 스타일
+    .logo {
+        a {
+            text-decoration: none;
+            color: $secondary-color;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    }
+
+    // 네비게이션 메뉴
+    .nav-menu {
+        ul {
+            @include flex-center; // 메뉴 리스트 정렬
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                margin: 0 15px;
+
+                a {
+                    text-decoration: none;
+                    color: $text-color;
+                    font-size: 20px;
+                    font-weight: bold;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    // 로그인 및 회원가입 버튼
+    .auth-buttons {
+        button {
+            @include button-style; // 버튼 스타일 적용
+            margin-left: 10px;
+        }
+    }
+}

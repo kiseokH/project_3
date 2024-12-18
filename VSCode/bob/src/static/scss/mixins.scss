@@ -1,0 +1,22 @@
+// 버튼 스타일 믹스인
+@mixin button-style {
+    padding: 8px 12px;
+    border: 2px solid $primary-color;
+    background-color: white;
+    color: $primary-color;
+    font-size: $base-font-size;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $button-hover-bg;
+        color: $button-hover-text;
+    }
+}
+
+// Flexbox 중앙 정렬 믹스인
+@mixin flex-center($justify: center, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
