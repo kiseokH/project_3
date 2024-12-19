@@ -16,7 +16,7 @@ function Header() {
                 <ul>
                     <li><a href="#">주유소 정보</a> </li>
                     <li><a href="#">근처 주유소 찾기</a> </li>
-                    <li><a href="#">커뮤니티</a> </li>
+                    <li><a href="#">게시판</a> </li>
                 </ul>
             </nav>
 
