@@ -2,10 +2,14 @@
 @import 'mixins';
 
 .header-container {
-    @include flex-center(space-around, center); // 중앙 정렬
     padding: $header-padding;
     background-color: white;
     border-bottom: 2px solid $primary-color;
+
+    .header-size {
+        @include flex-center(space-around, center); // 중앙 정렬
+        margin: 0px 150px;
+    }
 
     // 로고 스타일
     .logo {

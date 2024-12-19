@@ -1,16 +1,29 @@
+@import '../variables';
+@import '../mixins';
+
 .today-price-section {
     display: flex;
-    justify-content: space-between;
-    margin: 0;
+    justify-content: center;
+    background-image: url('../../images/도로2.png'); // 이미지 경로
+    background-size: cover; // 이미지 크기를 컨테이너에 맞게 조정
+    background-position: center; // 이미지를 가운데 정렬
+    background-repeat: no-repeat; // 이미지 반복 방지
+    width: 100%; // 컨테이너 너비
+    height: 500px; // 컨테이너 높이
+
 
     .today-price {
+        display: flex;
+        margin-top: 160px;
+        gap: 100px;
 
         h2 {
-            width: 280px;
-            border-bottom: 2px solid black;
+            width: 370px;
             display: inline-block;
+            border-bottom: 2px solid white;
             padding: 10px;
             padding-bottom: 5px;
+            color: white;
         }
 
         h3 {
@@ -19,14 +32,11 @@
         }
 
         .price-container {
-            display: flex;
-            flex-direction: column;
-
             .price-box {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 300px;
+                width: 400px;
                 background: #f5f5f5;
                 margin-bottom: 15px;
                 border-radius: 10px;
