@@ -9,26 +9,31 @@
     background-position: center; // 이미지를 가운데 정렬
     background-repeat: no-repeat; // 이미지 반복 방지
     width: 100%; // 컨테이너 너비
-    height: 500px; // 컨테이너 높이
+    height: 600px; // 컨테이너 높이
 
 
     .today-price {
         display: flex;
-        margin-top: 160px;
+        padding: 100px 70px;
+
         gap: 100px;
+        background-color: rgba(0, 0, 0, 0.4);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
 
         h2 {
             width: 370px;
             display: inline-block;
-            border-bottom: 2px solid white;
+            border-bottom: 2px solid #FF5733;
             padding: 10px;
             padding-bottom: 5px;
-            color: white;
+            color: #ffffff;
         }
 
         h3 {
             display: inline-block;
             margin-right: 20px;
+            color: #333333;
         }
 
         .price-container {
@@ -37,23 +42,24 @@
                 align-items: center;
                 justify-content: center;
                 width: 400px;
-                background: #f5f5f5;
+                background: rgba(255, 255, 255, 0.9);
                 margin-bottom: 15px;
-                border-radius: 10px;
-                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+                border-radius: 15px;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
 
                 .price {
                     font-size: 20px;
-                    color: red;
+                    color: #FF5733;
 
                     .change {
                         font-size: 16px;
+                        color: #28A745;
                     }
                 }
 
                 .details {
                     font-size: 14px;
-                    color: gray;
+                    color: #555555;
                 }
             }
         }
