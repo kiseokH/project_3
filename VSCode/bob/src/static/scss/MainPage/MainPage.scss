@@ -4,6 +4,7 @@
 @import "today-price";
 @import "oilTrend";
 @import "region-section";
+@import "lowestPrice";
 
 .main-container {
     width: 100%;
@@ -12,21 +13,35 @@
 }
 
 .today-price-section {
+    width: 100%; // 컨테이너 너비
+    // height: 500px; // 컨테이너 높이
     display: flex;
     justify-content: center;
-    background-image: url('../../images/도로2.png'); // 이미지 경로
+    // background-image: url('../../images/도로2.png'); // 이미지 경로
     background-size: cover; // 이미지 크기를 컨테이너에 맞게 조정
     background-position: center; // 이미지를 가운데 정렬
     background-repeat: no-repeat; // 이미지 반복 방지
-    width: 100%; // 컨테이너 너비
-    height: 600px; // 컨테이너 높이
 }
 
 .today-price {
     display: flex;
-    padding: 100px 70px;
+    padding: 50px 20px;
     gap: 150px;
-    background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    // background-color: rgba(0, 0, 0, 0.4);
+    // box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
+}
+
+.region-top-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0px;
+
+    .region-top {
+        display: flex;
+        padding: 0px 20px;
+        gap: 50px;
+        border-radius: 15px;
+    }
 }

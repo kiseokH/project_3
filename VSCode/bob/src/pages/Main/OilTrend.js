@@ -53,13 +53,13 @@ const OilTrend = () => {
             legend: {
                 position: "top", // 범례 위치
                 labels: {
-                    color: "#ffffff", // 범례 텍스트 색상
+                    color: "#333333", // 범례 텍스트 색상
                 },
             },
             title: {
                 display: true,
-                text: "유가 추이 그래프", // 제목 추가
-                color: "#ffffff", // 제목 색상
+                // text: "유가 추이 그래프", // 제목 추가
+                color: "#333333", // 제목 색상
                 font: {
                     size: 16,
                 },
@@ -68,12 +68,12 @@ const OilTrend = () => {
         scales: {
             x: {
                 ticks: {
-                    color: "#ffffff", // X축 글자 색상
+                    color: "#333333", // X축 글자 색상
                 },
             },
             y: {
                 ticks: {
-                    color: "#ffffff", // Y축 글자 색상
+                    color: "#333333", // Y축 글자 색상
                 },
             },
         },
@@ -82,8 +82,14 @@ const OilTrend = () => {
     return (
         <div className="oil-trend">
             <h2>유가 추이</h2>
+            <div className="oil-btn">
+                <button className="oilBtn">1주</button>
+                <button className="oilBtn">1개월</button>
+                <button className="oilBtn">1년</button>
+                <button className="oilBtn">3년</button>
+            </div>
             {/* 그래프 추가 */}
-            <div style={{ width: "450px", margin: "0 auto" }}>
+            <div style={{ width: "480px", margin: "0 auto" }}>
                 <Line data={data} options={options} />
             </div>
         </div>

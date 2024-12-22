@@ -10,10 +10,10 @@
     h2 {
         width: 370px;
         display: inline-block;
-        border-bottom: 2px solid #FF5733;
+        border-bottom: 2px solid $primary-color;
         padding: 10px;
         padding-bottom: 5px;
-        color: #ffffff;
+        color: #333333;
     }
 
     h3 {
@@ -38,7 +38,7 @@
 
             .change {
                 font-size: 16px;
-                color: #28A745;
+                color: #007bff;
             }
         }
     }

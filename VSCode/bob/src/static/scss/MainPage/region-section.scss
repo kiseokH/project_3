@@ -1,25 +1,70 @@
 @import '../variables';
 @import '../mixins';
 
-.region-top-section {
-    display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-
-    th,
-    td {
-        border: 1px solid #ddd;
-        padding: 15px;
-        text-align: center;
+// 제목 스타일
+.region-container {
+    .title {
+        // text-align: center;
+        padding: 8px 10px;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        border-bottom: 2px solid $primary-color;
     }
 
-    th {
-        background-color: #f4f4f4;
+    // 컨트롤 영역 스타일
+    .controls {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+
+        // 드롭다운 스타일
+        .dropdown {
+            padding: 5px 20px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        // 버튼 스타일
+        .sort-buttons {
+            button {
+                padding: 10px 15px;
+                margin-left: 10px;
+                border: none;
+                background-color: #007bff;
+                color: white;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 14px;
+
+                &:hover {
+                    background-color: #0056b3;
+                }
+            }
+        }
+    }
+
+    // 테이블 스타일
+    .station-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
     }
 }
