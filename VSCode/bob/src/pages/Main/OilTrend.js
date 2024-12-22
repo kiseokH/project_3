@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
+import Popup from "../../customHook/Popup"; // 팝업 컴포넌트 임포트
 
 // Chart.js에서 필요한 모듈 가져오기
 import {
@@ -13,7 +14,7 @@ import {
     Legend,
 } from "chart.js";
 
-// Chart.js에 모듈 등록
+// Chart.js 등록
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -25,6 +26,16 @@ ChartJS.register(
 );
 
 const OilTrend = () => {
+
+    // 팝업 상태 관리
+    const [showPopup, setShowPopup] = useState(false);
+
+    // 팝업 열기
+    const openPopup = () => setShowPopup(true);
+
+    // 팝업 닫기
+    const closePopup = () => setShowPopup(false);
+
     // 그래프 데이터
     const data = {
         labels: ["12.1", "12.8", "12.15", "12.23"], // X축 데이터
@@ -58,7 +69,6 @@ const OilTrend = () => {
             },
             title: {
                 display: true,
-                // text: "유가 추이 그래프", // 제목 추가
                 color: "#333333", // 제목 색상
                 font: {
                     size: 16,
@@ -81,17 +91,30 @@ const OilTrend = () => {
 
     return (
         <div className="oil-trend">
+            {/* 제목 */}
             <h2>유가 추이</h2>
+
+            {/* 버튼 그룹 */}
             <div className="oil-btn">
-                <button className="oilBtn">1주</button>
+                <button className="oilBtn" onClick={openPopup}>1주</button>
                 <button className="oilBtn">1개월</button>
                 <button className="oilBtn">1년</button>
                 <button className="oilBtn">3년</button>
             </div>
-            {/* 그래프 추가 */}
+
+            {/* 그래프 */}
             <div style={{ width: "480px", margin: "0 auto" }}>
                 <Line data={data} options={options} />
             </div>
+
+            {/* 팝업 추가 */}
+            {showPopup && (
+                <>
+                    {/* 팝업 배경 (어두운 효과) */}
+                    <div className="popup-overlay" onClick={closePopup}></div>
+                    <Popup onClose={closePopup} />
+                </>
+            )}
         </div>
     );
 };
