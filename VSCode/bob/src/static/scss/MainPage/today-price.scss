@@ -1,68 +1,44 @@
 @import '../variables';
 @import '../mixins';
 
-.today-price-section {
-    display: flex;
-    justify-content: center;
-    background-image: url('../../images/도로2.png'); // 이미지 경로
-    background-size: cover; // 이미지 크기를 컨테이너에 맞게 조정
-    background-position: center; // 이미지를 가운데 정렬
-    background-repeat: no-repeat; // 이미지 반복 방지
-    width: 100%; // 컨테이너 너비
-    height: 600px; // 컨테이너 높이
+.price-container {
+    .details {
+        font-size: 14px;
+        color: #555555;
+    }
 
+    h2 {
+        width: 370px;
+        display: inline-block;
+        border-bottom: 2px solid #FF5733;
+        padding: 10px;
+        padding-bottom: 5px;
+        color: #ffffff;
+    }
 
-    .today-price {
+    h3 {
+        display: inline-block;
+        margin-right: 20px;
+        color: #333333;
+    }
+
+    .price-box {
         display: flex;
-        padding: 100px 70px;
-
-        gap: 100px;
-        background-color: rgba(0, 0, 0, 0.4);
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+        align-items: center;
+        justify-content: center;
+        width: 400px;
+        background: rgba(255, 255, 255, 0.9);
+        margin-bottom: 15px;
         border-radius: 15px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
 
-        h2 {
-            width: 370px;
-            display: inline-block;
-            border-bottom: 2px solid #FF5733;
-            padding: 10px;
-            padding-bottom: 5px;
-            color: #ffffff;
-        }
+        .price {
+            font-size: 20px;
+            color: #FF5733;
 
-        h3 {
-            display: inline-block;
-            margin-right: 20px;
-            color: #333333;
-        }
-
-        .price-container {
-            .period {}
-
-            .price-box {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 400px;
-                background: rgba(255, 255, 255, 0.9);
-                margin-bottom: 15px;
-                border-radius: 15px;
-                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-
-                .price {
-                    font-size: 20px;
-                    color: #FF5733;
-
-                    .change {
-                        font-size: 16px;
-                        color: #28A745;
-                    }
-                }
-
-                .details {
-                    font-size: 14px;
-                    color: #555555;
-                }
+            .change {
+                font-size: 16px;
+                color: #28A745;
             }
         }
     }

@@ -1,10 +1,91 @@
 import React from "react";
+import { Line } from "react-chartjs-2";
+
+// Chart.js에서 필요한 모듈 가져오기
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+} from "chart.js";
+
+// Chart.js에 모듈 등록
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+);
 
 const OilTrend = () => {
+    // 그래프 데이터
+    const data = {
+        labels: ["12.1", "12.8", "12.15", "12.23"], // X축 데이터
+        datasets: [
+            {
+                label: "전국 평균",
+                data: [1650, 1660, 1670, 1680], // Y축 데이터
+                borderColor: "#007BFF", // 선 색깔
+                backgroundColor: "rgba(0, 123, 255, 0.2)", // 선 아래 배경색
+                tension: 0.4, // 선의 곡선 정도
+            },
+            {
+                label: "충남 평균",
+                data: [1550, 1560, 1570, 1580], // Y축 데이터
+                borderColor: "#FFC107",
+                backgroundColor: "rgba(255, 193, 7, 0.2)",
+                tension: 0.4,
+            },
+        ],
+    };
+
+    // 그래프 옵션
+    const options = {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: "top", // 범례 위치
+                labels: {
+                    color: "#ffffff", // 범례 텍스트 색상
+                },
+            },
+            title: {
+                display: true,
+                text: "유가 추이 그래프", // 제목 추가
+                color: "#ffffff", // 제목 색상
+                font: {
+                    size: 16,
+                },
+            },
+        },
+        scales: {
+            x: {
+                ticks: {
+                    color: "#ffffff", // X축 글자 색상
+                },
+            },
+            y: {
+                ticks: {
+                    color: "#ffffff", // Y축 글자 색상
+                },
+            },
+        },
+    };
+
     return (
         <div className="oil-trend">
-            <h2>유가추이</h2>
-            <img src="../../static/images/bob_1.png" alt="유가 추이 그래프" />
+            <h2>유가 추이</h2>
+            {/* 그래프 추가 */}
+            <div style={{ width: "450px", margin: "0 auto" }}>
+                <Line data={data} options={options} />
+            </div>
         </div>
     );
 };

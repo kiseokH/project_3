@@ -1,0 +1,21 @@
+@import '../variables';
+@import '../mixins';
+
+.oil-trend {
+    color: #ffffff;
+
+    h2 {
+        width: 370px;
+        display: inline-block;
+        border-bottom: 2px solid #FF5733;
+        padding: 10px;
+        padding-bottom: 5px;
+        color: #ffffff;
+    }
+
+    h3 {
+        display: inline-block;
+        margin-right: 20px;
+        color: #333333;
+    }
+}
