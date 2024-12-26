@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "../static/scss/popup/popup.scss"; // SCSS 파일 임포트
 
 const Popup = ({ onClose }) => {
+  // ⭐ 즐겨찾기 상태 추가 (기본값: false)
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  // ⭐ 클릭 시 상태 토글 함수
+  const toggleFavorite = (e) => {
+    e.stopPropagation(); // 클릭 이벤트 전파 방지
+    setIsFavorite(!isFavorite); // true <-> false 전환
+  };
+
   return (
     <div className="popup-overlay" onClick={onClose}>
       <div className="popup" onClick={(e) => e.stopPropagation()}>
@@ -9,7 +18,15 @@ const Popup = ({ onClose }) => {
         <div className="popup-header">
           <img src="../static/images/bob_1.png" alt="logo" className="logo" />
           <span className="title">만수르주유소</span>
-          <button className="favorite-btn">★</button>
+
+          {/* ⭐ 즐겨찾기 버튼 */}
+          <button
+            className={`favorite-btn ${isFavorite ? "active" : ""}`} // active 클래스 추가
+            onClick={toggleFavorite} // 클릭 시 상태 토글
+          >
+            ★
+          </button>
+
           <button className="close-btn" onClick={onClose}>
             X
           </button>
