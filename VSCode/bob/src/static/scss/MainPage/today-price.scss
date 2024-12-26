@@ -2,19 +2,20 @@
 @import '../mixins';
 
 .price-container {
+    display: flex;
     .details {
         font-size: 14px;
         color: #555555;
     }
 
-    h2 {
-        width: 300px;
-        display: inline-block;
-        border-bottom: 2px solid $primary-color;
-        padding: 10px;
-        padding-bottom: 5px;
-        color: #333333;
-    }
+    // h2 {
+    //     width: 300px;
+    //     display: inline-block;
+    //     border-bottom: 2px solid $primary-color;
+    //     padding: 10px;
+    //     padding-bottom: 5px;
+    //     color: #333333;
+    // }
 
     h3 {
         display: inline-block;
@@ -23,13 +24,12 @@
     }
 
     .price-box {
+        width: 380px;
+        height: 100px;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 380px;
         background: rgba(255, 255, 255, 0.9);
-        margin-bottom: 15px;
-        border-radius: 15px;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
 
         .price {
