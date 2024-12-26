@@ -22,8 +22,8 @@ const MainPage = () => {
                 <div className="region-top">
                     <OilTrend />
                     <RegionTopCharge />
-                    <LowestPrice />
                 </div>
+                <LowestPrice />
             </section>
         </main >
     );

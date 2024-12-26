@@ -3,6 +3,7 @@
 
 // 컨테이너 전체 스타일
 .lowest-price-container {
+    padding: 50px 130px;
     .title {
         // text-align: center;
         margin-bottom: 20px;
@@ -16,12 +17,12 @@
     // 테이블 정렬 컨테이너
     .oil-station-table {
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
         gap: 20px;
 
         // 테이블 스타일
         table {
-            // width: 50%;
+            width: 50%;
             border-collapse: collapse;
             min-width: 280px; // 최소 크기 보장
             font-size: 14px;

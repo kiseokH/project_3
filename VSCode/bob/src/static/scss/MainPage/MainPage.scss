@@ -25,20 +25,16 @@
 
 .today-price {
     display: flex;
-    position: fixed;
-    top: 433px;
+    position: relative;
+    top: 350px;
 }
 
 .region-top-section {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 50px 0px;
 
     .region-top {
         display: flex;
-        padding: 0px 20px;
-        gap: 50px;
-        border-radius: 15px;
+        justify-content: space-evenly;
+        margin-top: 50px;
     }
 }
