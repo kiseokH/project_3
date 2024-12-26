@@ -3,14 +3,14 @@ import React, { useState } from "react";
 const RegionTopCharge = () => {
     // 초기 충전소 데이터 설정
     const initialStations = [
-        { region: "천안시", name: "천안시청 3충전소", score: 4.83, price: 450 },
-        { region: "천안시", name: "천안시청 2충전소", score: 4.68, price: 430 },
-        { region: "천안시", name: "샤인더 충전소", score: 4.45, price: 410 },
-        { region: "천안시", name: "행복충전소", score: 4.41, price: 420 },
-        { region: "천안시", name: "천안역 충전소", score: 4.31, price: 400 },
+        { region: "천안시", name: "천안시청 3주유소", score: 4.83, price: 450 },
+        { region: "천안시", name: "천안시청 2주유소", score: 4.68, price: 430 },
+        { region: "천안시", name: "샤인더 주유소", score: 4.45, price: 410 },
+        { region: "천안시", name: "행복 주유소", score: 4.41, price: 420 },
+        { region: "천안시", name: "천안역 주유소", score: 4.31, price: 400 },
     ];
 
-    // 상태 관리: 충전소 목록
+    // 상태 관리: 주유소 목록
     const [chargeStations, setChargeStations] = useState(initialStations);
 
     // 가격순 정렬 함수
@@ -28,7 +28,7 @@ const RegionTopCharge = () => {
     return (
         <div className="region-container">
             {/* 제목 */}
-            <h2 className="title">우리지역 Top5 충전소</h2>
+            <h2 className="title">우리지역 Top5 주유소</h2>
 
             {/* 지역 선택 드롭다운 */}
             <div className="controls">

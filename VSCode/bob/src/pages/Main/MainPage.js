@@ -18,7 +18,6 @@ const MainPage = () => {
                 </div>
             </section>
 
-
             {/* 지역 별 Top5 주유소 */}
             <section className="region-top-section">
                 <div className="region-top">
