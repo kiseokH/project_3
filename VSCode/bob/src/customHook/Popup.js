@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../static/scss/popup/popup.scss"; // SCSS 파일 임포트
+import bobImage from "../static/images/bob_1.png";
 
 const Popup = ({ onClose }) => {
   // ⭐ 즐겨찾기 상태 추가 (기본값: false)
@@ -16,7 +17,7 @@ const Popup = ({ onClose }) => {
       <div className="popup" onClick={(e) => e.stopPropagation()}>
         {/* 팝업 헤더 */}
         <div className="popup-header">
-          <img src="../static/images/bob_1.png" alt="logo" className="logo" />
+          <img src={bobImage} alt="logo" className="logo" />
           <span className="title">만수르주유소</span>
 
           {/* ⭐ 즐겨찾기 버튼 */}
