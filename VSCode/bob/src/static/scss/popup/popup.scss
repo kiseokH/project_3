@@ -1,3 +1,7 @@
+@import '../global.scss';
+@import '../variables';
+@import '../mixins';
+
 /* 팝업 배경 */
 .popup-overlay {
     position: fixed;
@@ -6,17 +10,14 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    /* 반투명 배경 */
     z-index: 999;
 }
 
 /* 팝업 컨테이너 */
 .popup {
-    width: 500px;
-    /* 너비 조정 */
+    width: 450px;
     border: 1px solid #000;
-    /* 테두리 검정 */
-    border-radius: 8px;
+    border-radius: 15px;
     background-color: #fff;
     position: fixed;
     top: 50%;
@@ -37,129 +38,127 @@
 
     .logo {
         width: 50px;
-        /* 로고 크기 */
         height: auto;
         margin-right: 8px;
     }
 
     .title {
-        font-size: 16px;
+        font-size: 25px;
         font-weight: bold;
+        color: #333;
+
     }
 
     .favorite-btn {
-        font-size: 16px;
-        /* 크기 줄임 */
+        font-size: 30px;
         color: gold;
         cursor: pointer;
         margin-left: auto;
-        /* 오른쪽 끝으로 이동 */
+        background-color: transparent;
     }
 
     .close-btn {
-        font-size: 16px;
-        /* 크기 줄임 */
+        font-size: 30px;
         color: red;
         cursor: pointer;
+        background-color: transparent;
+        margin: 12px 0px 0px 10px;
     }
 }
 
 /* 섹션 스타일 */
 .section {
-    padding: 12px 0;
-    border-bottom: 1px solid #000;
-    /* 얇은 검정 구분선 */
-    margin-bottom: 12px;
+    padding: 5px;
 
-    h2 {
-        font-size: 14px;
+    .title {
+        font-size: 18px;
         font-weight: bold;
-        margin-bottom: 8px;
         color: #333;
+        border-bottom: 2px solid $primary-color;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        margin: 15px 0px;
     }
 
     p {
-        font-size: 13px;
+        font-size: 14px;
         color: #666;
+    }
+
+    .btn {
+        padding: 6px 20px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        background-color: #fff;
+        font-size: 13px;
+        cursor: pointer;
+        margin-right: 4px;
+
+        &:hover {
+            background-color: #ddd;
+        }
+    }
+
+    .score {
+        position: fixed;
+        top: 68%;
+        left: 48%;
+        transform: translate(-50%, -50%);
+    }
+
+    .stars-section {
+        display: flex;
+        justify-content: space-around;
+        padding-left: 10px;
     }
 }
 
 /* 유가 정보 */
 .oil-price {
-    display: flex;
+    width: 97%;
     justify-content: space-between;
-    padding: 8px;
-    background: #f1f1f1;
-    /* 더 밝은 회색 배경 */
-    border: 1px solid #000;
-    /* 테두리 얇게 */
-    border-radius: 4px;
+    text-align: center;
+    padding: 5px;
     color: #333;
-    font-weight: bold;
 }
 
-/* 평점 */
-.rating {
+.oil-price-1,
+.oil-price-2 {
     display: flex;
-    flex-direction: column;
-    gap: 4px;
+    justify-content: space-around;
+    border: 1px solid #000;
+    padding: 5px;
+    background: #f1f1f1;
+}
 
-    p {
-        display: flex;
-        align-items: center;
-        font-size: 13px;
-        color: #333;
-    }
+.oil-price-2 {
+    border-top: none;
+    background-color: transparent;
 
-    .stars {
-        color: gold;
-        margin-left: 4px;
-    }
-
-    .score {
-        font-size: 14px;
-        font-weight: bold;
-        color: #333;
+    span {
+        margin-left: 25px;
     }
 }
 
 /* 부가 정보 버튼 */
-.extra-info .btn {
-    padding: 6px 12px;
-    /* 버튼 더 작게 */
-    border: 1px solid #000;
-    /* 얇은 테두리 */
-    border-radius: 4px;
-    background-color: #fff;
-    font-size: 13px;
-    cursor: pointer;
-    margin-right: 4px;
-    /* 간격 조정 */
+.extra-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 
-    &:hover {
-        background-color: #ddd;
-    }
-}
+    .btn {
+        margin: 10px 20px;
+        padding: 14px;
+        border: 2px solid $primary-color;
+        border-radius: 5px;
+        background-color: #fff;
+        font-size: 14px;
+        cursor: pointer;
 
-/* 스크롤바 */
-.popup {
-    scrollbar-width: thin;
-    scrollbar-color: #888 #f1f1f1;
-
-    &::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    &::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 4px;
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-        background: #555;
+        &:hover {
+            background-color: $primary-color;
+            color: white;
+            font-weight: bold;
+        }
     }
 }
