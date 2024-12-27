@@ -3,32 +3,25 @@ import "../static/scss/popup/info-popup.scss"; // SCSS 파일 임포트
 import bobImage from "../static/images/bob_1.png";
 
 const Popup = ({ onClose }) => {
-  // ⭐ 로그인 여부 상태 추가 (기본값: false)
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // ⭐ 즐겨찾기 상태 추가 (기본값: false)
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  // ⭐ 로그인 유도 팝업 상태 추가
-  const [showLoginPopup, setShowLoginPopup] = useState(false);
+  // ⭐ 상태 관리
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // 로그인 상태
+  const [isFavorite, setIsFavorite] = useState(false); // 즐겨찾기 상태
+  const [showLoginPopup, setShowLoginPopup] = useState(false); // 로그인 팝업
+  const [showRatingPopup, setShowRatingPopup] = useState(false); // ⭐ 평점 팝업 추가
 
   // ⭐ 즐겨찾기 클릭 함수
   const toggleFavorite = (e) => {
-    e.stopPropagation(); // 클릭 이벤트 전파 방지
-
+    e.stopPropagation();
     if (!isLoggedIn) {
-      // 로그인이 안 되어 있으면 로그인 팝업 열기
-      setShowLoginPopup(true);
+      setShowLoginPopup(true); // 로그인 유도 팝업 열기
     } else {
-      // 로그인이 되어 있으면 상태 전환
-      setIsFavorite(!isFavorite);
+      setIsFavorite(!isFavorite); // 즐겨찾기 토글
     }
   };
 
-  // ⭐ 로그인 팝업 닫기
-  const closeLoginPopup = () => {
-    setShowLoginPopup(false);
-  };
+  // ⭐ 팝업 닫기 함수
+  const closeLoginPopup = () => setShowLoginPopup(false);
+  const closeRatingPopup = () => setShowRatingPopup(false); // ⭐ 평점 팝업 닫기
 
   return (
     <div className="popup-overlay" onClick={onClose}>
@@ -37,15 +30,12 @@ const Popup = ({ onClose }) => {
         <div className="popup-header">
           <img src={bobImage} alt="logo" className="logo" />
           <span className="title">만수르주유소</span>
-
-          {/* ⭐ 즐겨찾기 버튼 */}
           <button
-            className={`favorite-btn ${isFavorite ? "active" : ""}`} // active 클래스 추가
-            onClick={toggleFavorite} // 클릭 시 상태 토글
+            className={`favorite-btn ${isFavorite ? "active" : ""}`}
+            onClick={toggleFavorite}
           >
             ★
           </button>
-
           <button className="close-btn" onClick={onClose}>
             X
           </button>
@@ -100,7 +90,9 @@ const Popup = ({ onClose }) => {
         <div className="extra-info">
           <button className="btn">경유지로 선택</button>
           <button className="btn">목적지로 선택</button>
-          <button className="btn">평점쓰기</button>
+          <button className="btn" onClick={() => setShowRatingPopup(true)}>
+            평점쓰기
+          </button>
         </div>
       </div>
 
@@ -108,9 +100,51 @@ const Popup = ({ onClose }) => {
       {showLoginPopup && (
         <div className="login-popup-overlay" onClick={closeLoginPopup}>
           <div className="login-popup" onClick={(e) => e.stopPropagation()}>
-            <strong>관심장소 등록은</strong>
             <p>로그인이 필요한 기능입니다! 🥺</p>
             <button className="btn" onClick={closeLoginPopup}>
+              확인
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ⭐ 평점 팝업 */}
+      {showRatingPopup && (
+        <div className="rating-popup-overlay" onClick={closeRatingPopup}>
+          <div className="rating-popup" onClick={(e) => e.stopPropagation()}>
+            <div className="title">평점 등록</div>
+            <div className="rating-section">
+              <div className="clean">
+                <div className="num">1 2 3 4 5</div>
+                <p>화장실 청결도</p>
+                {[1, 2, 3, 4, 5].map((num) => (
+                  <input
+                    key={num}
+                    type="radio"
+                    name="cleanliness"
+                    value={num}
+                  />
+                ))}
+              </div>
+              <div className="bility">
+                <p>접근성</p>
+                {[1, 2, 3, 4, 5].map((num) => (
+                  <input
+                    key={num}
+                    type="radio"
+                    name="accessibility"
+                    value={num}
+                  />
+                ))}
+              </div>
+              <div className="price">
+                <p>가 격</p>
+                {[1, 2, 3, 4, 5].map((num) => (
+                  <input key={num} type="radio" name="price" value={num} />
+                ))}
+              </div>
+            </div>
+            <button className="btn" onClick={closeRatingPopup}>
               확인
             </button>
           </div>
