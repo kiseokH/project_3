@@ -3,6 +3,11 @@ import React from "react";
 const TodayPrice = () => {
   return (
     <div className="price-container">
+      <div className="font">
+        <strong>기름값 아끼는 지름길</strong><br></br>
+        <span>밥줘가 있습니다</span>
+        <p>국내유가 안정과 국민경제 향상에 앞장서겠습니다.</p>
+      </div>
       {/* <h2>오늘의 유가</h2> */}
       <div className="price-box">
         <h3>전국 평균</h3>
