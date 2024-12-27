@@ -1,15 +1,33 @@
 import React, { useState } from "react";
-import "../static/scss/popup/popup.scss"; // SCSS 파일 임포트
+import "../static/scss/popup/info-popup.scss"; // SCSS 파일 임포트
 import bobImage from "../static/images/bob_1.png";
 
 const Popup = ({ onClose }) => {
+  // ⭐ 로그인 여부 상태 추가 (기본값: false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   // ⭐ 즐겨찾기 상태 추가 (기본값: false)
   const [isFavorite, setIsFavorite] = useState(false);
 
-  // ⭐ 클릭 시 상태 토글 함수
+  // ⭐ 로그인 유도 팝업 상태 추가
+  const [showLoginPopup, setShowLoginPopup] = useState(false);
+
+  // ⭐ 즐겨찾기 클릭 함수
   const toggleFavorite = (e) => {
     e.stopPropagation(); // 클릭 이벤트 전파 방지
-    setIsFavorite(!isFavorite); // true <-> false 전환
+
+    if (!isLoggedIn) {
+      // 로그인이 안 되어 있으면 로그인 팝업 열기
+      setShowLoginPopup(true);
+    } else {
+      // 로그인이 되어 있으면 상태 전환
+      setIsFavorite(!isFavorite);
+    }
+  };
+
+  // ⭐ 로그인 팝업 닫기
+  const closeLoginPopup = () => {
+    setShowLoginPopup(false);
   };
 
   return (
@@ -73,7 +91,6 @@ const Popup = ({ onClose }) => {
         </div>
 
         {/* 부가정보 */}
-
         <div className="section">
           <div className="title">[부가정보]</div>
           <button className="btn">편의점</button>
@@ -86,6 +103,18 @@ const Popup = ({ onClose }) => {
           <button className="btn">평점쓰기</button>
         </div>
       </div>
+
+      {/* ⭐ 로그인 유도 팝업 */}
+      {showLoginPopup && (
+        <div className="login-popup-overlay" onClick={closeLoginPopup}>
+          <div className="login-popup" onClick={(e) => e.stopPropagation()}>
+            <p>로그인이 필요한 기능입니다! 🥺</p>
+            <button className="btn" onClick={closeLoginPopup}>
+              확인
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

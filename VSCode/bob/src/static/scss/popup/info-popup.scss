@@ -2,6 +2,19 @@
 @import '../variables';
 @import '../mixins';
 
+/* 팝업 애니메이션 추가 */
+@keyframes popupFadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
 /* 팝업 배경 */
 .popup-overlay {
     position: fixed;
@@ -27,6 +40,9 @@
     z-index: 1000;
     padding: 16px;
     overflow-y: auto;
+
+    /* 애니메이션 적용 */
+    animation: popupFadeIn 0.3s ease-out; // 부드러운 등장 효과
 }
 
 /* 팝업 헤더 */
@@ -170,4 +186,39 @@
             font-weight: bold;
         }
     }
+}
+
+/* 로그인 팝업 애니메이션 */
+.login-popup {
+    position: absolute;
+    left: 450px;
+    width: 300px;
+    background: rgb(234, 254, 255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 20px;
+    z-index: 1000;
+
+    /* 애니메이션 효과 추가 */
+    // animation: popupFadeIn 0.1s ease-in-out;
+}
+
+/* 로그인 팝업 버튼 스타일 */
+.login-popup .btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background: #4de3ee;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-popup .btn:hover {
+    background: #209fa8;
+    color: white;
+    transform: scale(1.05);
 }
