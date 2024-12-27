@@ -108,6 +108,7 @@ const Popup = ({ onClose }) => {
       {showLoginPopup && (
         <div className="login-popup-overlay" onClick={closeLoginPopup}>
           <div className="login-popup" onClick={(e) => e.stopPropagation()}>
+            <strong>관심장소 등록은</strong>
             <p>로그인이 필요한 기능입니다! 🥺</p>
             <button className="btn" onClick={closeLoginPopup}>
               확인
