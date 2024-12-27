@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
-import Popup from "../../customHook/Popup"; // 팝업 컴포넌트 임포트
+import InfoPopup from "../../customHook/InfoPopup"; // 팝업 컴포넌트 임포트
 
 // Chart.js에서 필요한 모듈 가져오기
 import {
@@ -28,13 +28,13 @@ ChartJS.register(
 const OilTrend = () => {
 
     // 팝업 상태 관리
-    const [showPopup, setShowPopup] = useState(false);
+    const [showInfoPopup, setShowInfoPopup] = useState(false);
 
     // 팝업 열기
-    const openPopup = () => setShowPopup(true);
+    const openInfoPopup = () => setShowInfoPopup(true);
 
     // 팝업 닫기
-    const closePopup = () => setShowPopup(false);
+    const closeInfoPopup = () => setShowInfoPopup(false);
 
     // 그래프 데이터
     const data = {
@@ -96,8 +96,8 @@ const OilTrend = () => {
 
             {/* 버튼 그룹 */}
             <div className="oil-btn">
-                <button className="oilBtn" onClick={openPopup}>1주</button>
-                <button className="oilBtn">1개월</button>
+                <button className="oilBtn" onClick={openInfoPopup}>1주</button>
+                <button className="oilBtn" onClick={openInfoPopup}>1개월</button>
                 <button className="oilBtn">1년</button>
                 <button className="oilBtn">3년</button>
             </div>
@@ -108,11 +108,11 @@ const OilTrend = () => {
             </div>
 
             {/* 팝업 추가 */}
-            {showPopup && (
+            {showInfoPopup && (
                 <>
                     {/* 팝업 배경 (어두운 효과) */}
-                    <div className="popup-overlay" onClick={closePopup}></div>
-                    <Popup onClose={closePopup} />
+                    <div className="popup-overlay" onClick={closeInfoPopup}></div>
+                    <InfoPopup onClose={closeInfoPopup} />
                 </>
             )}
         </div>

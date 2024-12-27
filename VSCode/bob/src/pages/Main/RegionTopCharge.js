@@ -34,6 +34,8 @@ const RegionTopCharge = () => {
             <div className="controls">
                 <select className="dropdown">
                     <option>천안시</option>
+                    <option>천안시</option>
+                    <option>천안시</option>
                 </select>
 
                 {/* 정렬 버튼 */}
@@ -48,7 +50,7 @@ const RegionTopCharge = () => {
                 <thead>
                     <tr>
                         <th>지역</th>
-                        <th>충전소명</th>
+                        <th>주유소명</th>
                         <th>가격</th>
                         <th>평점</th>
                     </tr>

@@ -23,18 +23,13 @@
     background-repeat: no-repeat; // 이미지 반복 방지
 }
 
-.today-price {
-    display: flex;
-    position: relative;
-    top: 350px;
-}
-
 .region-top-section {
-    width: 100%;
 
     .region-top {
         display: flex;
-        justify-content: space-evenly;
-        margin-top: 50px;
+        justify-content: center;
+        padding: 50px;
+        gap: 50px;
+        background-color: #f6f3f3;
     }
 }
