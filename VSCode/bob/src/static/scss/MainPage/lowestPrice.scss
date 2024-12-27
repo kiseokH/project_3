@@ -3,15 +3,17 @@
 
 // 컨테이너 전체 스타일
 .lowest-price-container {
-    padding: 50px 120px;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 80px;
+    gap: 20px;
     background-color: #d4f4fa;
 
     .container {
-        width: 560px;
         @include box-style;
 
         .title {
-            width: 540px;
+            width: 450px;
             margin-bottom: 20px;
             padding: 10px;
             font-size: 20px;
@@ -24,18 +26,18 @@
         .oil-station-table {
             display: flex;
             gap: 10px;
+            padding: 5px;
 
             // 테이블 스타일
             table {
-                width: 100%;
                 border-collapse: collapse;
-                max-width: 280px;
+                max-width: 300px;
                 font-size: 14px;
 
                 th,
                 td {
                     border-bottom: 1px solid #ddd;
-                    padding: 7px;
+                    padding: 8px;
                     text-align: center;
                 }
 
@@ -55,4 +57,11 @@
             }
         }
     }
+
+    .other {
+        width: 50%;
+        padding: 20px;
+        border: 1px solid black;
+    }
+
 }

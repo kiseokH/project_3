@@ -71,6 +71,7 @@ const LowestPrice = () => {
           </table>
         </div>
       </div>
+      <div className="other"></div>
     </div>
   );
 };
