@@ -3,6 +3,7 @@ import '../../static/scss/Info/Sidebar.scss';
 import soil from '../../static/images/stationLogo/soil.PNG'
 import gs from '../../static/images/stationLogo/gs.PNG'
 
+
 const Recommend = () => {
     return (
         <div className="recommendation">

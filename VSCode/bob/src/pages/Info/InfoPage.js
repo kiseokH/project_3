@@ -5,7 +5,7 @@ import "../../static/scss/Info/InfoPage.scss";
 
 const InfoPage = () => {
     return (
-        <div className="container">
+        <div className="info-container">
             <Sidebar />
             <Maps />
         </div>

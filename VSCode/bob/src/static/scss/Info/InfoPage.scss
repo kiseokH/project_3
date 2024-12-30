@@ -1,0 +1,11 @@
+.info-container {
+    display: flex;
+}
+
+.sidebar {
+    flex: 1; /* 25% */
+}
+
+#map {
+    flex: 3; /* 75% */
+}
