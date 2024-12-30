@@ -1,5 +1,6 @@
 import React from 'react';
 import '../static/scss/header.scss';
+import { Link } from 'react-router-dom';
 
 function Header() {
     return (
@@ -15,7 +16,7 @@ function Header() {
                 {/* 메뉴 리스트 */}
                 <nav className="nav-menu">
                     <ul>
-                        <li><a href="#">주유소 정보&추천</a> </li>
+                        <li><Link to="/info">주유소 정보&추천</Link> </li>
                         <li><a href="#">목적지 검색</a> </li>
                         <li><a href="#">테마 라이딩</a> </li>
                         <li><a href="#">자유게시판</a> </li>
