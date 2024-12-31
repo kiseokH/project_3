@@ -1,6 +1,12 @@
 import React from 'react';
 import '../static/scss/header.scss';
 import { Link } from 'react-router-dom';
+import logosample from '../static/images/sampleLOGO.png';
+import info from '../static/images/icons/info.png';
+import search from '../static/images/icons/search.png';
+import riding from '../static/images/icons/riding.png';
+import board from '../static/images/icons/board.png';
+import mypage from '../static/images/icons/mypage.png';
 
 function Header() {
     return (
@@ -9,7 +15,7 @@ function Header() {
                 {/* 왼쪽로고 */}
                 <div className="logo">
                     <a href="/">
-                        <span className="logo-text">BOBJAR</span>
+                        <img src={logosample} alt="로고" style={{ height: "35px" }}></img>
                     </a>
                 </div>
 
@@ -29,8 +35,19 @@ function Header() {
                     <button className="signup-button">회원가입</button>
                 </div>
             </div>
+
+            {/* 모바일 하단 메뉴 */}
+            <div className="mobile-menu">
+                <ul>
+                    <li><Link to="/info"><img src={info} alt="정보찾기" /></Link></li>
+                    <li><a href="#"><img src={search} alt="목적지" /></a></li>
+                    <li><a href="#"><img src={riding} alt="라이딩" /></a></li>
+                    <li><a href="#"><img src={board} alt="게시판" /></a></li>
+                    <li><a href="#"><img src={mypage} alt="마이페이지" /></a></li>
+                </ul>
+            </div>
         </header>
-    )
+    );
 }
 
 export default Header;
