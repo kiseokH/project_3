@@ -39,9 +39,15 @@ const MainMapPage = () => {
                 // 웹 화면: 사이드바 렌더링
                 <div className="sidebar">
                     <SearchDest />
+                    <br/>
                     <RecommendSTN />
                 </div>
             )}
+                <div className="cam-button">
+                    <button className="cam" onClick={() => setActivePopup('camera')}>
+                        <img src={cam} alt="후방카메라 등록" />
+                    </button>
+                </div>
 
             <div className="main-content">
                 <DestMap />
@@ -57,7 +63,7 @@ const MainMapPage = () => {
                     </div>
                 </div>
             )}
-            {isSmallScreen && activePopup === 'camera' && (
+            {activePopup === 'camera' && (
                 <div className="popup mobile-popup">
                     <div className="popup-content">
                         <button className="close-btn" onClick={closePopup}>✖</button>

@@ -16,12 +16,12 @@ const RecommendSTN = () => {
                     </div>
                     <br />
                     <div className="station-body-container">
-                        <div className="station-body">
+                        <div className="station-body" style={{margin:"0px 0px 0px 20px"}}>
                             <span className="station-price">- 가격: 1550원</span><br />
                             <span className="station-distance">- 거리: 0.7km</span>
                         </div>
-                        <div className="station-buttons">
-                            <button className="station-btn">경유지<br />설정</button>
+                        <div className="station-buttons" style={{margin:"0px 0px 0px 30px"}}>
+                            <button className="station-btn" style={{width:"120px", height:"40px"}}>경유지 설정</button>
                         </div>
                     </div>
                 </div>
@@ -35,12 +35,12 @@ const RecommendSTN = () => {
                     </div>
                     <br />
                     <div className="station-body-container">
-                        <div className="station-body">
+                        <div className="station-body" style={{margin:"0px 0px 0px 20px"}}>
                             <span className="station-price">- 가격: 1510원</span><br />
                             <span className="station-distance">- 거리: 2.5km</span>
                         </div>
-                        <div className="station-buttons">
-                            <button className="station-btn">경유지<br />설정</button>
+                        <div className="station-buttons" style={{margin:"0px 0px 0px 30px"}}>
+                            <button className="station-btn" style={{width:"120px", height:"40px"}}>경유지 설정</button>
                         </div>
                     </div>
                 </div>
