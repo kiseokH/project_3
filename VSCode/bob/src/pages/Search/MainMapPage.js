@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Maps from './Maps';
-import Recommend from './Recommend';
-import Search from './Search';
-import "../../static/scss/Info/InfoPage.scss";
-import Rbtn from "../../static/images/icons/recommendBTN.png";
+import DestMap from './DestMap';
+import '../../static/scss/Info/InfoPage.scss';
 import Sbtn from "../../static/images/icons/searchBTN.png";
+import cam from "../../static/images/icons/cam.PNG";
+import SearchDest from './SearchDest';
+import RecommendSTN from './RecommendSTN';
 
-const InfoPage = () => {
+const MainMapPage = () => {
     const [isSmallScreen, setIsSmallScreen] = useState(false);
     const [activePopup, setActivePopup] = useState(null); // 모바일 팝업 상태 관리
 
@@ -15,57 +15,67 @@ const InfoPage = () => {
             setIsSmallScreen(window.innerWidth <= 450);
         };
 
-        handleResize(); // 초기 실행
+        handleResize(); // 초기실행
         window.addEventListener('resize', handleResize);
 
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const closePopup = () => setActivePopup(null); // 팝업 닫기
+    const closePopup = () => setActivePopup(null); //팝업 닫기
 
     return (
         <div className="info-container">
             {isSmallScreen ? (
                 // 모바일 화면: 버튼 렌더링
                 <div className="mobile-buttons">
-                    <button onClick={() => setActivePopup('recommend')}>
-                        <img src={Rbtn} alt="추천" />
-                    </button>
                     <button onClick={() => setActivePopup('search')}>
-                        <img src={Sbtn} alt="찾기" />
+                        <img src={Sbtn} alt="검색" />
+                    </button>
+                    <button onClick={() => setActivePopup('camera')}>
+                        <img src={cam} alt="후방카메라" />
                     </button>
                 </div>
             ) : (
                 // 웹 화면: 사이드바 렌더링
                 <div className="sidebar">
-                    <Recommend />
-                    <Search />
+                    <SearchDest />
+                    <br/>
+                    <RecommendSTN />
                 </div>
             )}
+                <div className="cam-button">
+                    <button className="cam" onClick={() => setActivePopup('camera')}>
+                        <img src={cam} alt="후방카메라 등록" />
+                    </button>
+                </div>
 
             <div className="main-content">
-                <Maps />
+                <DestMap />
             </div>
 
             {/* 모바일 팝업 */}
-            {isSmallScreen && activePopup === 'recommend' && (
-                <div className="popup mobile-popup">
-                    <div className="popup-content">
-                        <button className="close-btn" onClick={closePopup}>✖</button>
-                        <Recommend />
-                    </div>
-                </div>
-            )}
             {isSmallScreen && activePopup === 'search' && (
                 <div className="popup mobile-popup">
                     <div className="popup-content">
                         <button className="close-btn" onClick={closePopup}>✖</button>
-                        <Search />
+                        <SearchDest />
+                        <RecommendSTN/>
                     </div>
                 </div>
             )}
+            {activePopup === 'camera' && (
+                <div className="popup mobile-popup">
+                    <div className="popup-content">
+                        <button className="close-btn" onClick={closePopup}>✖</button>
+
+                    </div>
+                </div>
+            )}
+
+
+
         </div>
     );
 };
 
-export default InfoPage;
+export default MainMapPage;
