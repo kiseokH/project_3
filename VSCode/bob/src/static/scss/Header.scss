@@ -3,6 +3,9 @@
 @import 'mixins';
 
 .header-container {
+    width:100%;    
+    position: fixed; 
+    z-index: 9999; 
     padding: 20px;
     background-color: #f6f3f3;
 
@@ -60,7 +63,7 @@
 
     // 미디어쿼리 - 450px 이하
     @media (max-width: 450px) {
-        
+
         .header-size {
             display: flex;
             flex-direction: column;
