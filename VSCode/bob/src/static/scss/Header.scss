@@ -3,11 +3,13 @@
 @import 'mixins';
 
 .header-container {
+    padding: 20px 0px;
     width:100%;    
-    position: fixed; 
     z-index: 9999; 
-    padding: 20px;
+    position:sticky;
+    top:0;    
     background-color: #f6f3f3;
+    height: 42px; // 헤더 높이
 
     .header-size {
         @include flex-center(space-around, center);
@@ -131,4 +133,3 @@
         }
     }
 }
-
