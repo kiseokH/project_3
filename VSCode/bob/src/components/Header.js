@@ -24,7 +24,7 @@ function Header() {
                     <ul>
                         <li><Link to="/info">주유소 정보&추천</Link> </li>
                         <li><Link to="/MainMapPage">목적지 검색</Link> </li>
-                        <li><a href="#">테마 라이딩</a> </li>
+                        <li><Link to="/Riding">테마 라이딩</Link></li>
                         <li><Link to="/board">자유게시판</Link> </li>
                     </ul>
                 </nav>
