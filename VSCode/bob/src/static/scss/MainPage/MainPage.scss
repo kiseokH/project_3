@@ -25,9 +25,8 @@
 .region-top-section {
     .region-top {
         display: flex;
-        justify-content: center;
-        padding: 50px;
-        gap: 30px;
+        justify-content: space-between;
+        padding: 50px 10px;
         background-color: #f6f3f3;
     }
 }

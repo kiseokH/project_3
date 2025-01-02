@@ -27,14 +27,6 @@ ChartJS.register(
 
 const OilTrend = () => {
 
-    // 팝업 상태 관리
-    const [showInfoPopup, setShowInfoPopup] = useState(false);
-
-    // 팝업 열기
-    const openInfoPopup = () => setShowInfoPopup(true);
-
-    // 팝업 닫기
-    const closeInfoPopup = () => setShowInfoPopup(false);
 
     // 그래프 데이터
     const data = {
@@ -93,28 +85,10 @@ const OilTrend = () => {
         <div className="oil-trend">
             {/* 제목 */}
             <h2>유가 추이</h2>
-
-            {/* 버튼 그룹 */}
-            <div className="oil-btn">
-                <button className="oilBtn" onClick={openInfoPopup}>1주</button>
-                <button className="oilBtn" onClick={openInfoPopup}>1개월</button>
-                <button className="oilBtn">1년</button>
-                <button className="oilBtn">3년</button>
-            </div>
-
             {/* 그래프 */}
-            <div style={{ width: "480px", margin: "0 auto" }}>
+            <div style={{ width: "330px", margin: "0 auto" }}>
                 <Line data={data} options={options} />
             </div>
-
-            {/* 팝업 추가 */}
-            {showInfoPopup && (
-                <>
-                    {/* 팝업 배경 (어두운 효과) */}
-                    <div className="popup-overlay" onClick={closeInfoPopup}></div>
-                    <InfoPopup onClose={closeInfoPopup} />
-                </>
-            )}
         </div>
     );
 };
