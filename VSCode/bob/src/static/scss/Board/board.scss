@@ -1,0 +1,298 @@
+@import '../global.scss';
+@import '../variables';
+@import '../mixins';
+
+.board {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .search-register {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    .navbar ul {
+      display: flex;
+      gap: 15px;
+      list-style: none;
+
+      li a {
+        font-size: 18px;
+        text-decoration: none;
+        color: #007bff;
+
+        &:hover {
+          color: #0056b3;
+        }
+      }
+    }
+
+    .filter-group {
+      height: 40px;
+      display: flex;
+      gap: 10px;
+
+      input,
+      select {
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      button {
+        width: 120px;
+        padding: 0px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+
+  .freeBoard-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      text-align: center;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f6f6f6;
+    }
+
+    tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+  }
+
+  // 등록 팝업
+  .register-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9); // 초기 크기 축소
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 800px;
+    height: 550px;
+    z-index: 1000;
+
+    // 애니메이션 효과
+    opacity: 0; 
+    transition: all 0.2s ease-out; 
+
+    &.open {
+      opacity: 1; 
+      transform: translate(-50%, -50%) scale(1); 
+    }
+
+    &.close {
+      opacity: 0; 
+      transform: translate(-50%, -50%) scale(0.8); 
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    // 닫기 버튼 스타일
+    .close-btn {
+      position: absolute;
+      top: -10px;
+      right: 15px;
+      width: 35px;
+      height: 35px;
+      font-size: 20px;
+      color: white;
+      background-color: red;
+      border: none;
+      border-radius: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darkred;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .form-group {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        label {
+          width: 80px;
+        }
+
+        input,
+        select {
+          flex: 1;
+          padding: 8px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+        }
+      }
+
+      // 내용 박스 스타일
+      textarea {
+        height: 300px;
+        resize: none;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        color: #333;
+        font-size: 16px;
+      }
+
+      button {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+
+  .view-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 800px;
+    height: 550px;
+    z-index: 1000;
+
+    // 애니메이션 효과
+    opacity: 0; 
+    transition: all 0.2s ease-out; 
+
+    &.open {
+      opacity: 1; 
+      transform: translate(-50%, -50%) scale(1); 
+    }
+
+    &.close {
+      opacity: 0; 
+      transform: translate(-50%, -50%) scale(0.8); 
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 35px;
+      height: 35px;
+      font-size: 20px;
+      color: white;
+      background-color: red;
+      border: none;
+      border-radius: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darkred;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .form-group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 15px;
+
+        p {
+          margin: 0px;
+          font-size: 16px;
+        }
+
+        .right {
+          p {
+            margin-top: 5px;
+          }
+        }
+      }
+
+      textarea {
+        height: 300px;
+        resize: none;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        background-color: #f9f9f9;
+        color: #333;
+        font-size: 16px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+}
