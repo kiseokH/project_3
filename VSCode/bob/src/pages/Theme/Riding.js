@@ -81,7 +81,7 @@ const categories = [
 const Riding = () => {
   return (
     <div className="riding-container">
-      {/* 메인 제목 */}
+      {/* 페이지 메인 제목 */}
       <h1 className="riding-title">추천 라이딩 명소</h1>
       {/* 카테고리별 명소를 순회하며 렌더링 */}
       {categories.map((category, index) => (
@@ -92,7 +92,6 @@ const Riding = () => {
             {/* 각 장소를 순회하며 렌더링 */}
             {category.places.map((place) => (
               <div key={place.id} className="riding-frame">
-                {/* 이미지와 텍스트를 감싸는 링크 제거 */}
                 <div className="riding-content">
                   {/* 장소 이미지 */}
                   <img
@@ -100,20 +99,22 @@ const Riding = () => {
                     alt={place.title}
                     className="riding-image"
                   />
-                  {/* 장소 제목 */}
-                  <h3 className="riding-frame-title">{place.title}</h3>
-                  {/* 장소 위치 */}
-                  <p className="riding-location"># {place.location}</p>
-                  {/* 장소 설명 */}
-                  <p className="riding-description">{place.description}</p>
+                  {/* 변경된 부분: 제목과 위치를 하나의 컨테이너로 묶음 */}
+                  <div className="riding-header">
+                    <h3 className="riding-frame-title">{place.title}</h3>
+                    <p className="riding-location"># {place.location}</p>
+                  </div>
+                  {/* 설명과 버튼을 하나의 컨테이너로 묶음 */}
+                  <div className="riding-description-container">
+                    <p className="riding-description">{place.description}</p>
+                    <button
+                      className="set-destination-btn"
+                      onClick={() => alert(`${place.title}을(를) 목적지로 설정하였습니다.`)}
+                    >
+                      목적지 설정
+                    </button>
+                  </div>
                 </div>
-                {/* 목적지 설정 버튼 */}
-                <button
-                  className="set-destination-btn"
-                  onClick={() => alert(`${place.title}을(를) 목적지로 설정하였습니다.`)}
-                >
-                  목적지 설정
-                </button>
               </div>
             ))}
           </div>
