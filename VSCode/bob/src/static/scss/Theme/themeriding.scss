@@ -146,3 +146,76 @@
     background-color: #59595a; /* 클릭 시 배경색 변경 */
     transform: scale(0.98); /* 클릭 시 약간 작아짐 */
 }
+@media (max-width: 450px) {
+    /* 전체 컨테이너 */
+    .riding-container {
+        padding: 20px; /* 여백 축소 */
+    }
+
+    /* 제목 스타일 */
+    .riding-title {
+        font-size: 2em; /* 제목 크기 축소 */
+        margin-bottom: 20px;
+    }
+
+    /* 카테고리 제목 */
+    .riding-category-title {
+        font-size: 0.5em; /* 카테고리 제목 크기 축소 */
+        margin-bottom: 20px;
+    }
+
+    /* 그리드 레이아웃 */
+    .riding-grid {
+        grid-template-columns: 1fr; /* 한 줄에 카드 하나씩 배치 */
+        gap: 20px; /* 간격 축소 */
+    }
+
+    /* 카드 스타일 */
+    .riding-frame {
+        border-radius: 10px; /* 모서리 둥글기 조정 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 축소 */
+    }
+
+    /* 이미지 스타일 */
+    .riding-image {
+        height: 200px; /* 이미지 높이 축소 */
+    }
+ 
+    .riding-frame-title {
+        font-size: 0.5em; /* 제목 크기 */
+        white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+        overflow: hidden; /* 텍스트 넘칠 경우 숨김 */
+        text-overflow: ellipsis; /* 텍스트 넘칠 경우 말줄임표 */
+    }
+
+    .riding-location {
+        font-size: 0.9em; /* 위치 크기 */
+        color: #555; /* 위치 텍스트 색상 */
+        white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    }
+
+    /* 설명 및 버튼 컨테이너 */
+    .riding-description-container {
+        flex-direction: column; /* 설명과 버튼을 세로로 배치 */
+        gap: 10px;
+    }
+
+    .riding-description {
+        font-size: 0.9em; /* 설명 글자 크기 축소 */
+        width: 100%; /* 전체 너비 사용 */
+    }
+
+    .set-destination-btn {
+        width: 100%; /* 버튼 너비 전체 사용 */
+        height: auto; /* 높이 자동 조정 */
+        font-size: 14px; /* 텍스트 크기 조정 */
+    }
+    .riding-header {
+        display: flex; /* 플렉스 레이아웃 */
+        flex-direction: row; /* 가로 정렬 */
+        justify-content: center; /* 제목과 위치를 양쪽 끝에 배치 */
+        align-items: center; /* 수직 중앙 정렬 */
+        gap: 10px; /* 간격 추가 */
+        width: 100%; /* 부모 컨테이너의 너비에 맞춤 */
+    }
+}
