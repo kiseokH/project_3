@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import '../../static/scss/Theme/themeriding.scss'; // 스타일 파일
+// 스타일 파일 불러오기
+import '../../static/scss/Theme/themeriding.scss';
 
+// 카테고리와 장소 데이터를 배열로 정의
 const categories = [
   {
     category: '죽기 전에 가봐야 할 해안도로 라이딩 명소',
@@ -76,29 +77,36 @@ const categories = [
   },
 ];
 
+// Riding 컴포넌트 정의
 const Riding = () => {
   return (
     <div className="riding-container">
+      {/* 메인 제목 */}
       <h1 className="riding-title">추천 라이딩 명소</h1>
+      {/* 카테고리별 명소를 순회하며 렌더링 */}
       {categories.map((category, index) => (
         <div key={index} className="category-section">
+          {/* 카테고리 제목 */}
           <h2 className="category-title">{category.category}</h2>
           <div className="riding-grid">
+            {/* 각 장소를 순회하며 렌더링 */}
             {category.places.map((place) => (
               <div key={place.id} className="riding-frame">
-                <Link to={`/riding/${place.id}`} className="riding-link">
+                {/* 이미지와 텍스트를 감싸는 링크 제거 */}
+                <div className="riding-content">
+                  {/* 장소 이미지 */}
                   <img
                     src={require(`../../static/images/Riding/${place.image}`)}
                     alt={place.title}
                     className="riding-image"
                   />
-                  <div className="riding-content">
-                    <h3 className="riding-frame-title">{place.title}</h3>
-                    <p className="riding-location"># {place.location}</p>
-                    {/* description 추가 */}
-                    <p className="riding-description">{place.description}</p>
-                  </div>
-                </Link>
+                  {/* 장소 제목 */}
+                  <h3 className="riding-frame-title">{place.title}</h3>
+                  {/* 장소 위치 */}
+                  <p className="riding-location"># {place.location}</p>
+                  {/* 장소 설명 */}
+                  <p className="riding-description">{place.description}</p>
+                </div>
                 {/* 목적지 설정 버튼 */}
                 <button
                   className="set-destination-btn"
@@ -115,4 +123,5 @@ const Riding = () => {
   );
 };
 
+// Riding 컴포넌트를 기본으로 내보내기
 export default Riding;

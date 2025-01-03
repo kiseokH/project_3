@@ -92,12 +92,16 @@
 
 /* 설명 스타일 */
 .riding-description {
-    font-size: 1em; /* 설명 텍스트의 글자 크기 */
-    color: #666; /* 설명 텍스트 색상 */
+    font-size: 1.5em; /* 설명 텍스트의 글자 크기 조금 키움 */
+    color: #333; /* 텍스트 색상을 더 진한 색으로 변경 */
+    background-color: #f9f9f9; /* 연한 배경색 추가 */
     margin-bottom: 20px; /* 설명과 버튼 사이 여백 */
-    line-height: 1.6; /* 줄 간격 설정 */
+    padding: 15px; /* 텍스트 주위에 여백 추가 */
     word-wrap: break-word; /* 긴 단어를 적절히 줄바꿈 */
     white-space: normal; /* 텍스트가 잘리지 않도록 설정 */
+    text-align: left; /* 글자를 왼쪽 정렬 */
+    border-radius: 5px; /* 부드러운 모서리 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 약간의 그림자 추가 */
 }
 /* 전체 텍스트와 이미지를 균일하게 설정 */
 .riding-content p {
