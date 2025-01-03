@@ -7,12 +7,13 @@
 }
 .riding-header {
     display: flex; /* 제목과 위치를 가로 정렬 */
-    justify-content: flex-start; /* 제목과 위치를 시작점에 정렬 */
+    justify-content: center; /* 제목과 위치를 시작점에 정렬 */
     align-items: center; /* 수직 중앙 정렬 */
-    gap: 4px; /* 제목과 위치 간 간격을 최소화 */
-    margin: 0; /* 여백 제거 */
+    gap: 30px; /* 제목과 위치 간 간격을 최소화 */
+    margin: 10px; /* 여백 제거 */
     font-size: 1em; /* 제목과 위치 크기 조정 */
     flex-wrap: nowrap; /* 줄바꿈 방지 */
+    // text-align: center;
 }
 
 /* 제목 스타일 */
@@ -86,7 +87,7 @@
 
 /* 제목 스타일 */
 .riding-frame-title {
-    font-size: 1.5em; /* 카드 제목의 글자 크기 */
+    font-size: 1.1em; /* 카드 제목의 글자 크기 */
     color: #007bff; /* 카드 제목의 파란색 */
     margin-bottom: 10px; /* 제목 아래 여백 */
 }
@@ -95,7 +96,7 @@
 .riding-location {
     font-size: 1.5em; /* 위치 정보의 글자 크기 */
     font-weight: bold; /* 위치 정보를 굵게 표시 */
-    color: #555; /* 위치 정보의 텍스트 색상 */
+    color: #035ab1; /* 위치 정보의 텍스트 색상 */
     margin-bottom: 10px; /* 위치 정보 아래 여백 */
 }
 
@@ -110,7 +111,7 @@
 
 /* 설명 스타일 */
 .riding-description {
-    font-size: 1.2em; /* 설명 텍스트의 글자 크기 */
+    font-size: 1.0em; /* 설명 텍스트의 글자 크기 */
     color: #333; /* 진한 색상으로 설정 */
     background-color: #f9f9f9; /* 연한 배경색 추가 */
     padding: 10px; /* 텍스트 주위에 여백 추가 */
@@ -127,8 +128,8 @@
     flex-shrink: 0; /* 버튼 크기가 줄어들지 않도록 설정 */
     padding: 10px 15px; /* 버튼 내부 여백 조정 */
     font-size: 14px; /* 텍스트 크기 */
-    background-color: #007bff; /* 버튼 배경색 */
-    color: #fff; /* 텍스트 색상 */
+    background-color: #30303062; /* 버튼 배경색 */
+    color: #000000; /* 텍스트 색상 */
     border: none; /* 테두리 제거 */
     border-radius: 6px; /* 둥근 모서리 */
     cursor: pointer; /* 클릭 가능한 커서 */
@@ -138,10 +139,10 @@
 }
 
 .set-destination-btn:hover {
-    background-color: #0056b3; /* 마우스 오버 시 배경색 변경 */
+    background-color: #59595a; /* 마우스 오버 시 배경색 변경 */
 }
 
 .set-destination-btn:active {
-    background-color: #003f7f; /* 클릭 시 배경색 변경 */
+    background-color: #59595a; /* 클릭 시 배경색 변경 */
     transform: scale(0.98); /* 클릭 시 약간 작아짐 */
 }
