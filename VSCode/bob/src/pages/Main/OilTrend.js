@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
-import InfoPopup from "../../customHook/InfoPopup"; // 팝업 컴포넌트 임포트
 
 // Chart.js에서 필요한 모듈 가져오기
 import {

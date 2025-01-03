@@ -58,3 +58,23 @@
         }
     }
 }
+
+@media screen and (max-width: 450px) {
+    .lowest-price-container {
+        .container {
+            .title {
+                font-size: 25px;
+            }
+
+            // 테이블 정렬 컨테이너
+            .oil-station-table {
+                // 테이블 스타일
+                table {
+                    border-collapse: collapse;
+                    max-width: 300px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

@@ -13,11 +13,20 @@
         font-size: 20px;
         color: #333333;
     }
+}
 
-    h3 {
-        display: inline-block;
-        margin-right: 20px;
-        color: #333333;
+@media screen and (max-width: 450px) {
+    .oil-trend {
+        @include box-style;
+    
+        h2 {
+            width: 400px;
+            display: inline-block;
+            border-bottom: 2px solid $primary-color;
+            padding: 10px;
+            padding-bottom: 5px;
+            font-size: 25px;
+            color: #333333;
+        }
     }
-
 }

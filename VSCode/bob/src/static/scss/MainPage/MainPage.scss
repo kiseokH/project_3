@@ -30,3 +30,21 @@
         background-color: #f6f3f3;
     }
 }
+
+@media screen and (max-width: 450px) {
+    .today-price-section {
+        height: 0px; // 컨테이너 높이
+    }
+
+    .region-top-section {
+        .region-top {
+            display: flex;
+            flex-direction: column;
+            padding:0px;
+            background-color: #f6f3f3;
+            position: relative;
+            top: 350px;
+        }
+    }
+
+}

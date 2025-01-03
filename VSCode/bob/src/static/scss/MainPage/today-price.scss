@@ -7,35 +7,19 @@
     height: 70px;
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
     top: 175px;
-    // .font {
-    //     text-align: center;
-    //     position: absolute;
-    //     top: 150px;
-    //     left: 450px;
-    //     line-height: 2.5rem;
-    //     color: rgb(255, 255, 255);
 
-    //     strong {
-    //         font-size: 40px;
-    //     }
-
-    //     span {
-    //         font-size: 30px;
-    //     }
-    // }
-
-
-    .details {
-        font-size: 16px;
-        color: #555555;
+    .price-box1 {
+        display: flex;
+        align-items: center;
     }
 
-    h3 {
+    .box-title {
         font-size: 25px;
-        display: inline-block;
-        margin-right: 20px;
+        font-weight: bold;
+        margin-right: 50px;
         color: #333333;
     }
 
@@ -44,7 +28,15 @@
         width: 380px;
         height: 100px;
         padding: 0px;
-        justify-content: center;
+        margin-left: 20px;
+
+        h3 {
+            font-size: 25px;
+            display: inline-block;
+            margin-right: 20px;
+            color: #333333;
+        }
+
         .price {
             margin-top: 35px;
             font-size: 22px;
@@ -54,6 +46,58 @@
                 font-size: 16px;
                 color: #007bff;
             }
+
+            .details {
+                font-size: 16px;
+                color: #555555;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .price-container {
+        border: none;
+        background: transparent;
+        box-shadow: none;
+
+        .price-box1 {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .box-title {
+            width: 400px;
+            position: relative;
+            left: 25px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid $primary-color;
+            font-size: 25px;
+            padding: 10px;
+            padding-bottom: 5px;
+            color: #333333;
+        }
+
+        .price-box {
+            @include box-style;
+            width: 100%;
+            margin-left: 0;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+
+        h3 {
+            font-size: 20px; // 제목 크기 축소
+        }
+
+        .details {
+            font-size: 14px; // 텍스트 크기 축소
+        }
+
+        .price-box .price {
+            font-size: 20px; // 가격 텍스트 크기 조정
         }
     }
 }

@@ -70,3 +70,15 @@
         }
     }
 }
+
+@media screen and (max-width: 450px) {
+    .region-container {
+        .title {
+            font-size: 25px;
+        }
+
+        .station-table {
+            width: 420px;
+        }
+    }
+}
