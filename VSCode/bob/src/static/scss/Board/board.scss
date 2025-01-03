@@ -3,10 +3,20 @@
 @import '../mixins';
 
 .board {
+  height: 730px;
   padding: 20px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
+
+  .board-title {
+    width: 200px;
+    font-size: 32px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    margin-bottom: 50px;
+    line-height: 60px;
+  }
 
   h2 {
     font-size: 24px;
@@ -15,9 +25,14 @@
   }
 
   .search-register {
+    height: 60px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
     .navbar ul {
       display: flex;
@@ -27,7 +42,8 @@
       li a {
         font-size: 18px;
         text-decoration: none;
-        color: #007bff;
+        // color: #007bff;
+        transition: color 0.2s ease;
 
         &:hover {
           color: #0056b3;
@@ -36,9 +52,10 @@
     }
 
     .filter-group {
-      height: 40px;
+      height: 35px;
       display: flex;
       gap: 10px;
+      margin-right: 10px;
 
       input,
       select {
@@ -70,17 +87,60 @@
 
     th,
     td {
-      border: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
       text-align: center;
       padding: 8px;
     }
 
     th {
       background-color: #f6f6f6;
+      border-bottom: 1px solid black;
     }
 
     tbody tr:hover {
       background-color: #f1f1f1;
+      cursor: pointer;
+    }
+
+    /* 열 너비 고정 */
+    th:nth-child(1),
+    td:nth-child(1) {
+      width: 5%;
+      /* 번호 열 크기 */
+    }
+
+    th:nth-child(2),
+    td:nth-child(2) {
+      width: 10%;
+      /* 구분 열 크기 */
+    }
+
+    th:nth-child(3),
+    td:nth-child(3) {
+      width: 50%;
+      /* 제목 열 크기 */
+    }
+
+    td:nth-child(3) {
+      text-align: left;
+    }
+
+    th:nth-child(4),
+    td:nth-child(4) {
+      width: 10%;
+      /* 작성자 열 크기 */
+    }
+
+    th:nth-child(5),
+    td:nth-child(5) {
+      width: 10%;
+      /* 날짜 열 크기 */
+    }
+
+    th:nth-child(6),
+    td:nth-child(6) {
+      width: 5%;
+      /* 조회수 열 크기 */
     }
   }
 
@@ -99,17 +159,17 @@
     z-index: 1000;
 
     // 애니메이션 효과
-    opacity: 0; 
-    transition: all 0.2s ease-out; 
+    opacity: 0;
+    transition: all 0.2s ease-out;
 
     &.open {
-      opacity: 1; 
-      transform: translate(-50%, -50%) scale(1); 
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
     }
 
     &.close {
-      opacity: 0; 
-      transform: translate(-50%, -50%) scale(0.8); 
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
     }
 
     h2 {
@@ -205,17 +265,17 @@
     z-index: 1000;
 
     // 애니메이션 효과
-    opacity: 0; 
-    transition: all 0.2s ease-out; 
+    opacity: 0;
+    transition: all 0.2s ease-out;
 
     &.open {
-      opacity: 1; 
-      transform: translate(-50%, -50%) scale(1); 
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
     }
 
     &.close {
-      opacity: 0; 
-      transform: translate(-50%, -50%) scale(0.8); 
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
     }
 
     h2 {

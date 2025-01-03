@@ -68,7 +68,7 @@ const Board = () => {
 
   return (
     <div className="board">
-      <h2>자유게시판</h2>
+      <div className="board-title">자유게시판</div>
       <div className="search-register">
         <div className="navbar">
           <ul>

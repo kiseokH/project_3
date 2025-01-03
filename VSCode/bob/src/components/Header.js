@@ -41,7 +41,7 @@ function Header() {
                 <ul>
                     <li><Link to="/info"><img src={info} alt="정보찾기" /></Link></li>
                     <li><a href="/MainMapPage"><img src={search} alt="목적지" /></a></li>
-                    <li><a href="#"><img src={riding} alt="라이딩" /></a></li>
+                    <li><Link to="/Riding"><img src={riding} alt="라이딩" /></Link></li>
                     <li><Link to="/board"><img src={board} alt="게시판" /></Link></li>
                     <li><a href="#"><img src={mypage} alt="마이페이지" /></a></li>
                 </ul>
