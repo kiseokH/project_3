@@ -94,9 +94,18 @@ const Riding = () => {
                   />
                   <div className="riding-content">
                     <h3 className="riding-frame-title">{place.title}</h3>
-                    <p className="riding-location">장소: {place.location}</p>
+                    <p className="riding-location"># {place.location}</p>
+                    {/* description 추가 */}
+                    <p className="riding-description">{place.description}</p>
                   </div>
                 </Link>
+                {/* 목적지 설정 버튼 */}
+                <button
+                  className="set-destination-btn"
+                  onClick={() => alert(`${place.title}을(를) 목적지로 설정하였습니다.`)}
+                >
+                  목적지 설정
+                </button>
               </div>
             ))}
           </div>

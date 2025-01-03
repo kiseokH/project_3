@@ -1,164 +1,129 @@
 /* Riding.js에서 사용되는 클래스 */
+
+/* 전체 컨테이너 */
 .riding-container {
-    padding: 20px; /* 전체 컨테이너의 안쪽 여백 */
+    padding: 40px; /* 전체 컨테이너의 안쪽 여백 */
     background-color: #f8f9fa; /* 연한 회색 배경 */
 }
 
 /* 제목 스타일 */
 .riding-title {
-    font-size: 2.5em; /* 제목의 글자 크기 */
+    font-size: 3em; /* 제목의 글자 크기 */
     font-weight: bold; /* 제목 글자를 굵게 표시 */
     color: #333; /* 제목의 텍스트 색상 */
-    margin-bottom: 30px; /* 제목 아래 여백 */
+    margin-bottom: 40px; /* 제목 아래 여백 */
     text-align: center; /* 텍스트를 가운데 정렬 */
 }
 
 /* 카테고리 스타일 */
 .riding-category {
-    margin-bottom: 40px; /* 카테고리 섹션 아래 여백 */
+    margin-bottom: 50px; /* 카테고리 섹션 아래 여백 */
 }
 
 .riding-category-title {
-    font-size: 2em; /* 카테고리 제목의 글자 크기 */
+    font-size: 2.5em; /* 카테고리 제목의 글자 크기 */
     font-weight: bold; /* 카테고리 제목 글자를 굵게 표시 */
     color: #007bff; /* 카테고리 제목의 파란색 */
-    margin-bottom: 20px; /* 제목 아래 여백 */
+    margin-bottom: 30px; /* 제목 아래 여백 */
     text-align: center; /* 텍스트를 가운데 정렬 */
 }
 
 /* 그리드 레이아웃 */
 .riding-grid {
-    display: grid; /* 그리드 레이아웃 사용 */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 카드 크기를 고정하고 자동으로 배치 */
-    gap: 20px; /* 카드 간의 간격 */
+    display: grid; /* CSS Grid 레이아웃 사용 */
+    grid-template-columns: repeat(2, 1fr); /* 두 개의 열로 구성 (카드 두 장씩 나열) */
+    gap: 30px; /* 카드 간의 간격 */
+    margin-top: 30px; /* 상단 여백 */
 }
 
 /* 각 카드 스타일 */
 .riding-frame {
     background-color: #fff; /* 카드 배경을 흰색으로 설정 */
-    border-radius: 10px; /* 카드 모서리를 둥글게 설정 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 카드에 그림자 효과 추가 */
-    overflow: hidden; /* 넘치는 콘텐츠를 숨김 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 호버 시 부드러운 애니메이션 */
+    border-radius: 15px; /* 카드 모서리를 둥글게 설정 */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* 카드 그림자 효과 */
+    overflow: visible; /* 넘치는 콘텐츠 숨김 해제 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 부드러운 애니메이션 */
     display: flex; /* 플렉스 박스 사용 */
     flex-direction: column; /* 세로 방향으로 배치 */
     justify-content: space-between; /* 내용 사이의 공간 분배 */
-    height: 100%; /* 카드의 높이를 균일하게 설정 */
-    width: 100%; /* 카드 너비를 균일하게 설정 */
+    height: auto; /* 카드 높이를 동적으로 설정 */
+    width: 100%; /* 카드 너비를 그리드에 맞게 설정 */
+    padding-bottom: 20px; /* 카드 하단 여백 추가 */
 }
 
 /* 호버 효과 */
 .riding-frame:hover {
-    transform: translateY(-5px); /* 카드가 위로 약간 이동 */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 더 진한 그림자 효과 */
+    transform: translateY(-8px); /* 카드가 위로 약간 이동 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 더 진한 그림자 효과 */
 }
 
 /* 이미지 스타일 */
 .riding-image {
     width: 100%; /* 카드 너비에 맞추기 */
-    height: auto; /* 원본 비율 유지 */
-    object-fit: contain; /* 원본 비율을 유지하면서 전체 표시 */
+    height: 280px; /* 이미지 높이를 키움 */
+    object-fit: cover; /* 이미지를 잘라내거나 확장하여 공간에 맞춤 */
     background-color: #f0f0f0; /* 이미지 배경색 설정 */
 }
 
 /* 텍스트 컨텐츠 */
 .riding-content {
-    padding: 15px; /* 내부 여백 */
+    padding: 20px; /* 내부 여백 */
     text-align: center; /* 텍스트를 중앙 정렬 */
     display: flex; /* 플렉스 박스 사용 */
     flex-direction: column; /* 세로 정렬 */
-    justify-content: center; /* 텍스트를 가운데 정렬 */
+    justify-content: flex-start; /* 상단부터 정렬 */
+    gap: 10px; /* 텍스트 요소 간 간격 추가 */
 }
 
+/* 제목 스타일 */
 .riding-frame-title {
-    font-size: 1.5em; /* 카드 제목의 글자 크기 */
+    font-size: 1.8em; /* 카드 제목의 글자 크기 */
     color: #007bff; /* 카드 제목의 파란색 */
     margin-bottom: 10px; /* 제목 아래 여백 */
 }
 
+/* 위치 스타일 */
 .riding-location {
-    font-size: 1.1em; /* 위치 정보의 글자 크기 */
+    font-size: 1.8em; /* 위치 정보의 글자 크기 */
+    font-weight: bold; /* 위치 정보를 굵게 표시 */
     color: #555; /* 위치 정보의 텍스트 색상 */
     margin-bottom: 10px; /* 위치 정보 아래 여백 */
 }
 
+/* 설명 스타일 */
 .riding-description {
     font-size: 1em; /* 설명 텍스트의 글자 크기 */
-    color: #666; /* 설명 텍스트의 색상 */
+    color: #666; /* 설명 텍스트 색상 */
+    margin-bottom: 20px; /* 설명과 버튼 사이 여백 */
+    line-height: 1.6; /* 줄 간격 설정 */
+    word-wrap: break-word; /* 긴 단어를 적절히 줄바꿈 */
+    white-space: normal; /* 텍스트가 잘리지 않도록 설정 */
 }
-
 /* 전체 텍스트와 이미지를 균일하게 설정 */
 .riding-content p {
     margin: 5px 0; /* 텍스트 상하 여백 */
 }
 
-/* RDetail.js에서 사용되는 클래스 */
-
-/* 전체 컨테이너 */
-.detail-container {
-    display: flex; /* 플렉스 박스 사용 */
-    flex-direction: column; /* 세로 정렬 */
-    align-items: center; /* 중앙 정렬 */
-    justify-content: center; /* 세로 중앙 정렬 */
-    padding: 20px; /* 안쪽 여백 */
-    text-align: center; /* 텍스트 중앙 정렬 */
-    min-height: 100vh; /* 화면 전체 높이에 맞춤 */
-    background-color: #f9f9f9; /* 연한 회색 배경 */
-}
-
-/* 제목 */
-.detail-title {
-    font-size: 2.5em; /* 제목의 글자 크기 */
-    font-weight: bold; /* 굵은 텍스트 */
-    margin-bottom: 20px; /* 아래 여백 */
-    color: #333; /* 텍스트 색상 */
-}
-
-/* 이미지 */
-.detail-image {
-    width: 100%; /* 이미지의 너비를 전체에 맞춤 */
-    max-width: 600px; /* 최대 너비 제한 */
-    height: auto; /* 원본 비율 유지 */
-    border-radius: 10px; /* 모서리를 둥글게 설정 */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* 그림자 효과 */
-    margin-bottom: 20px; /* 아래 여백 */
-}
-
-/* 위치와 설명 */
-.detail-location,
-.detail-description {
-    font-size: 1.2em; /* 텍스트 크기 */
-    color: #555; /* 텍스트 색상 */
-    margin-bottom: 15px; /* 아래 여백 */
-}
-
-/* 뒤로가기 버튼 */
-.detail-back-link {
-    display: inline-block; /* 인라인 블록 사용 */
-    padding: 10px 20px; /* 안쪽 여백 */
-    font-size: 1em; /* 글자 크기 */
-    font-weight: bold; /* 굵은 텍스트 */
+/* 목적지 설정 버튼 */
+.set-destination-btn {
+    align-self: flex-end; /* 버튼을 카드의 오른쪽 끝으로 정렬 */
+    margin-top: 20px; /* 위 요소와의 여백 설정 */
+    padding: 12px 20px; /* 버튼 내부 여백 */
+    font-size: 16px; /* 텍스트 크기 설정 */
+    background-color: #007bff; /* 배경색 */
     color: #fff; /* 텍스트 색상 */
-    background-color: #007bff; /* 버튼 배경색 */
-    text-decoration: none; /* 밑줄 제거 */
-    border-radius: 5px; /* 모서리를 둥글게 설정 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* 부드러운 효과 추가 */
+    border: none; /* 테두리 제거 */
+    border-radius: 6px; /* 모서리를 둥글게 */
+    cursor: pointer; /* 마우스 커서 설정 */
+    transition: background-color 0.3s ease; /* 부드러운 색 전환 효과 */
+    min-width: 160px; /* 최소 너비 */
 }
 
-.detail-back-link:hover {
-    background-color: #0056b3; /* 호버 시 배경색 변경 */
-    transform: scale(1.05); /* 크기 확대 */
+.set-destination-btn:hover {
+    background-color: #0056b3; /* 마우스 오버 시 배경색 변경 */
 }
 
-.detail-back-link:active {
+.set-destination-btn:active {
     background-color: #003f7f; /* 클릭 시 배경색 변경 */
-    transform: scale(0.95); /* 크기 축소 */
-}
-
-/* 에러 메시지 */
-.detail-error {
-    font-size: 1.5em; /* 에러 텍스트 크기 */
-    color: red; /* 텍스트 색상 */
-    text-align: center; /* 텍스트 중앙 정렬 */
+    transform: scale(0.98); /* 클릭 시 약간 작아짐 */
 }
